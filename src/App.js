@@ -1,12 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Map from './components/Map'; 
+import Header from './components/Header';
+import Banner from './components/Banner';
+import Featuredstats from './components/Featuredstats';
+import WhyitMatters from './components/WhyitMatters';
+import Ourmission from './components/Ourmission';
+import Howwedo from './components/Howwedo';
+import Footer from './components/Footer';
 
-function App() {
+const AppRouter = () => {
   return (
-    <div className="App">
-      fbkjehrkerwhb
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Header />
+            <Banner />
+            <Featuredstats />
+            <WhyitMatters />
+            <Ourmission />
+            <Howwedo />
+            <Footer />
+    
+          </>
+        } />
+        <Route path="/map" element={<Map />} /> 
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
-export default App;
+export default AppRouter;
